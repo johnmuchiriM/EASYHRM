@@ -1,0 +1,13 @@
+{
+    "name": "Vacations",
+    "alias": "vacations",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Vacations\\Providers\\VacationsServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

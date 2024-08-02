@@ -1,0 +1,18 @@
+{
+    "Pages": true,
+    "Page": true,
+    "Template": true,
+    "Inventory": true,
+    "CallBook": true,
+    "Role": true,
+    "Employees": true,
+    "Projects": true,
+    "Tasks": true,
+    "Attendances": true,
+    "Profile": true,
+    "Dashboard": true,
+    "Payroll": true,
+    "Vacations": true,
+    "Holidays": true,
+    "Configurations": true
+}

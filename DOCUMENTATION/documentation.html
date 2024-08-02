@@ -1,0 +1,616 @@
+<html>
+
+<head>
+    <title>USER DOCUMENTATION | EASY HRM </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style type="text/css">
+        body {
+            background: #E6E6E6;
+            font-family: "Arial";
+            color: #272822;
+
+        }
+        .pre-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f7f7f7;
+            margin-bottom: 10px;
+        }
+        h1,
+        footer p {
+            padding-left: 10px;
+            color: black;
+        }
+
+        small {
+            font-size: 50%;
+        }
+
+        #content {
+            padding-top: 80px;
+            margin-left: 350px;
+            position: relative;
+        }
+
+        ul.contents {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            line-height: 25px;
+        }
+
+        ul.contents li a,
+        ul.contents li {
+
+            text-decoration: none;
+        }
+
+        ul.contents li a:hover {
+            text-decoration: underline;
+        }
+
+        h2 {
+            border-bottom: 1px solid #272822;
+            padding-left: 8px;
+        }
+
+        aside {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            background: yellowgreen;
+            width: 300px;
+            height: 100%;
+            overflow-x: auto;
+        }
+
+        aside a {
+            color: white;
+        }
+
+        .big-box {
+            background: #E6E6E6;
+            box-shadow: 1px 0px 10px #E6E6E6;
+            padding: 10px;
+            width: 90%;
+        }
+
+        .small-box {
+            background: #FFF;
+            padding: 5px;
+            margin-bottom: 25px
+        }
+
+        blockquote {
+            padding: 15px;
+            background: #FFF;
+        }
+
+        footer {
+            font-size: 75%;
+        }
+
+        @media (max-width: 680px) {
+            aside {
+                position: relative;
+                width: 100%;
+                height: auto;
+
+            }
+
+            #content {
+                padding-top: 0px;
+                margin-left: 2px;
+                position: relative;
+            }
+        }
+
+        #back-to-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 9999;
+            width: 32px;
+            height: 32px;
+            text-align: center;
+            line-height: 30px;
+            background: black;
+            color: #FFF;
+            cursor: pointer;
+            border: 0;
+            border-radius: 2px;
+            text-decoration: none;
+            transition: opacity 0.2s ease-out;
+            opacity: 0;
+        }
+
+        #back-to-top:hover {
+            background: #FFF;
+        }
+
+        #back-to-top.show {
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <aside>
+        <header>
+            <h1>EASY HRM <br /><small>Manage Employee And Project At One Place</small></h1><hr>
+        </header>
+        <ul class="contents" id="top">
+            <li><a href="#copyrights">Copyrights</a></li>
+            <li><a href="#file-structure">Directory Structure</a></li>
+            <li><a href="#requirment">Requirment</a></li>
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#codehunger-support">Contact Us</a></li>
+            <li><strong>Administrator Login</strong>
+                <ul>
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#attendance-log">Attendance Logs</a></li>
+                    <li><a href="#employee">Employees</a></li>
+                    <li><a href="#project">Projects</a></li>
+                    <li><a href="#profile">Profile</a></li>
+                    <li><a href="#role">Roles</a></li>
+                    <li><a href="#task">Task</a></li>
+                    <li><a href="#approve-vacation">Approve Vacation</a></li>
+                    <li><a href="#allocate-leave">Allocate Leave</a></li>
+                    <li><a href="#holiday">Holiday</a></li>
+                    <li><a href="#generate-payroll">Generate Payroll</a></li>
+                    <li><a href="#configuration">Configuration</a></li>
+                </ul>
+            </li>
+            <li><strong>Employee Login</strong>
+                <ul>
+                    <li><a href="#employee-dashboard">Dashboard</a></li>
+                    <li><a href="#employee-attendance">Attendance</a></li>
+                    <li><a href="#employee-profile">Profile</a></li>
+                    <li><a href="#employee-project">Project</a></li>
+                    <li><a href="#employee-task">Task</a></li>
+                    <li><a href="#employee-mytask">My Task</a></li>
+                    <li><a href="#employee-vacation">Vacation</a></li>
+                    <li><a href="#employee-holiday-calendar">Holiday Calendar</a></li>
+                    <li><a href="#employee-salary-slip">Salary Slip</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <footer>
+            <p>&copy; 2021 All Rights Reserved. <br />CodeHunger Private Limited</p>
+        </footer>
+    </aside>
+    <div id="content">
+        <div class="big-box">
+            <div class="small-box">
+                <a name="copyrights"></a>
+                <h2>Copyrights</h2>
+                <p><strong>Author:</strong> CodeHunger Private Limited<br /><br />
+                    <strong>Website:</strong> <a href="https://www.codehunger.in">www.codehunger.in</a></p>
+            </div>
+        </div>
+
+        <div class="big-box">
+             <div class="small-box">
+                 <a name="file-structure"></a>
+                 <h2>Directory Structure</h3>
+                 <!-- <div class="pre-wrapper"> -->
+<pre>    HRM
+    ├── app/  ->It contains all the backend code of our web application like Controllers,Providers,Middlewares etc.
+    ├── bootstrap/ ->This directory contains app.php from where the whole framework bootstraps.
+    ├── config/ ->This directory contains all the configuration files related to database, mail, session, services etc.
+    ├── database/ ->This directory contains database migrations, model factories and seeds.
+    ├── Modules/ ->This directory will contain all Modules which is used to build appplication    
+    ├   ├─ Attendances/ -> This module is reponsible for managing attedance related work, and it will contain below folders.
+    ├      ├─ Config/
+    ├      ├─ Console/
+    ├      ├─ Database/
+    ├      ├─ Entities/
+    ├      ├─ Http/
+    ├      ├─ Providers/  
+    ├      ├─ Resources/  
+    ├      ├─ Routes/     
+    ├      ├─ Tests/     
+    ├      ├─ vendor/       
+    ├   ├─ Configurations/ ->This module is reponsible for managing application settings related work
+    ├   ├─ Dashboard/ ->This module is reponsible for managing dashboard related work
+    ├   ├─ Employees/ ->This module is reponsible for managing employee related work
+    ├   ├─ Holidays/ ->This module is reponsible for managing holidays related work
+    ├   ├─ Payroll/ ->This module is reponsible for managing payroll and salary slip related work
+    ├   ├─ Profile/ ->This module is reponsible for managing profile related work
+    ├   ├─ Projects/ ->This module is reponsible for managing project related work
+    ├   ├─ Role/ ->This module is reponsible for managing role related work
+    ├   ├─ Tasks/  ->This module is reponsible for managing task and mytask related work
+    ├   ├─ Vacations/ ->This module is reponsible for managing vacation and allocate leave related work
+    ├── public/ ->This directory contains assets used in the application like images, javaScript and css.
+    ├── resources/ ->This directory contains the frontend of the application.
+    ├── routes/ ->This directory contains all the route definitions of the application.
+    ├── storage/ ->This directory contains the compiled Blade templates,file caches and other files generated by framework.
+    ├── tests/ ->This directory contains all of our automated tests file.
+    ├── vendor/ ->This directory contains all the dependencies downloaded through Composer needed by our framework.
+</pre>
+                  <!-- </div> -->
+             </div>
+        </div>
+
+        <div class="big-box">
+            <div class="small-box">
+                <a name="requirment"></a>
+                <h2>Requirments</h2>
+                <ul>
+                    <li>PHP Version greater than or equal to <b>7.3</b></li>
+                    <li>BCMath PHP Extension</li>
+                    <li>Ctype PHP Extension</li>
+                    <li>Fileinfo PHP Extension</li>
+                    <li>JSON PHP Extension</li>
+                    <li>OpenSSL PHP Extension</li>
+                    <li>Mbstring PHP Extension</li>
+                    <li>Tokenizer PHP Extension</li>
+                    <li>XML PHP Extension</li>
+                    <li>PDO PHP Extension</li>
+                    <li>Node Version <b>v14.15.5(for compling assets)</b></li>
+                    <li><a href="https://www.apachefriends.org/download.html" target="_blank">Xampp</a> or <a target="_blank" href="https://www.wampserver.com/en/">Wampp</a>  if you are installing your local system</b></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="big-box">
+            <div class="small-box">
+                <a name="installation"></a>
+                <h2>Installation</h2>
+                <p><strong>Step#1</strong> UnZip the Script <br /><br />
+                    <strong>Step#2</strong> Go to your .env file and set your database, database username and database password  <br /><br />
+                    <strong>Step#3</strong> Open terminal from your project root folder <br /><br />
+                    <strong>Step#4</strong> Run <b>php artisan migrate</b> <br /><br />
+                    <strong>Step#5</strong> Run <b>php artisan db:seed</b> <br /><br />
+                    <strong>Step#6</strong> Run <b>php artisan serve</b> <br /><br />
+                    <strong>Step#7</strong> Installation Completed!.</p> <br />
+            </div>
+        </div>
+
+        <div class="big-box">
+            <h2>Administator Login</h2>
+            <h3>Email: admin@codehunger.in</h3>
+            <h3>Password: admin@1234</h3>
+            <div class="small-box">
+                <a name="dashboard"></a>
+                <h3>Dashboard</h3>
+                <img src="images/admin-card-1.png" width="100%">
+                <p>This section will contain below things respectively:</p>
+                <ul>
+                    <li>Shows total employees count</li>
+                    <li>Shows no of employee logged in on that particular day</li>
+                    <li>Total no of projects created by every employee</li>
+                    <li>Total hours worked by each and every employee monthly basis</li>
+                    <li>Total No of task currently running</li>
+                    <li>Total No of finished task</li>
+                    <li>Task which is not currently running</li>
+                    <li>No of task created by each and every employee</li>
+                </ul>
+                <img src="images/admin-card-2.png" width="100%">
+                <p>This section will contain below things respectively:</p>
+                <ul>
+                    <li>This will show top 5 employee based on working hour</li>
+                </ul>
+                <img src="images/admin-card-3.png" width="100%">
+                <p>This section will contain below things respectively:</p>
+                <ul>
+                    <li>This will show all employee list here, when you click on details you can see the employee dashboard</li>
+                </ul>
+                <img src="images/detail-emp-dashboard.png" width="100%">
+                <p>This section will show when you click on details button from <b>admin dashboard</b> </p>
+                <p>This section will contain below things :</p>
+                <ul>
+                    <li>Particular employee attendance count based on Login (monthly basis)</li>
+                    <li>Particular employee working hour count based on task hour - (monthly basis)</li>
+                    <li>Particular employee assigned project count - (Lifetime)</li>
+                    <li>Particular employee completed project count - (Lifetime)</li>
+                    <li>Particular employee approved leave count - (Lifetime)</li>
+                    <li>Particular employee finished task count - (Lifetime)</li>
+                    <li>Particular employee task count - (Lifetime)</li>
+                    <li>Particular employee attendance detail - (Monthly Basis)</li>
+                </ul>
+                <img src="images/emp-on-leave.png" width="100%">
+                <p>This section will contain below things :</p>
+                <ul>
+                    <li>It will show which employees are on leave today and for what reason</li>
+                </ul>
+            </div>
+
+            <div class="small-box">
+                <a name="attendance-log"></a>
+                <h3>Attendance Logs</h3>
+                <img src="images/attedance.png" width="100%">
+                <p>This section will contain below things :</p>
+                <ul>
+                    <li>You can check login and logout time of every employee</li>
+                    <li>You can check login hours every employee</li>
+                    <li>You can check Working hours of every employee</li>
+                </ul>
+            </div>
+
+            <div class="small-box">
+                <a name="employee"></a>
+                <h3>Employees</h3>
+                <img src="images/emp-img-1.png" width="100%">
+                <p>This section will contain below things:</p>
+                <ul>
+                    <li>List of employee</li>
+                    <li>Create employee</li>
+                    <li>Edit employee</li>
+                    <li>Delete employee</li>
+                </ul>
+            </div>
+
+            <div class="small-box">
+                <a name="project"></a>
+                <h3>Projects</h3>
+                <img src="images/project.png" width="100%">
+                <p>This section will contain below things:</p>
+                <ul>
+                    <li>List of project</li>
+                    <li>Create project</li>
+                    <li>Edit project</li>
+                    <li>Delete project</li>
+                    <li>Show completed project</li>
+                </ul>
+            </div>
+
+            <div class="small-box">
+                <a name="profile"></a>
+                <h3>Profile</h3>
+                <img src="images/profile-img-1.png" width="100%">
+                <p>This section will contain below things:</p>
+                <ul>
+                    <li>Change/Update Personal Detail</li>
+                </ul>
+            </div>
+
+            <div class="small-box">
+                <a name="role"></a>
+                <h3>Role</h3>
+                <img src="images/role.png" width="100%">
+                <p>This section will contain below things:</p>
+                <ul>
+                    <li>List of role</li>
+                    <li>Create role</li>
+                    <li>Edit role</li>
+                    <li>Delete role</li>
+                </ul>
+            </div>
+
+            <div class="small-box">
+                <a name="task"></a>
+                <h3>Task</h3>
+                <img src="images/task.png" width="100%">
+                <p>This section will contain below things:</p>
+                <ul>
+                    <li>List of task</li>
+                    <li>Create task</li>
+                    <li>Edit task</li>
+                    <li>Delete task</li>
+                    <li>Show completed task</li>
+                    <li>There is a microservice running on every 2 sec, so can you can check who is working and who is not working on your assigned task</li>
+                </ul>
+                <img src="images/click-task-comment.png" width="100%">
+                <img src="images/task-comment.png" width="100%">
+                <p>When you click on task, from the task list you are able to comments which is made by the assigned employee</p>
+            </div>
+
+
+            <div class="small-box">
+                <a name="approve-vacation"></a>
+                <h3>Approve Vacation</h3>
+                <img src="images/vacation.png" width="100%">
+                <p>This section will contain below things:</p>
+                <ul>
+                    <li>Here All employee vacation shows who apply for the leave</li>
+                    <li>You can change vacation status to Reject,approve or pending </li>
+                    <li>Delete the vacation</li>
+                </ul>
+            </div>
+
+            <div class="small-box">
+                <a name="allocate-leave"></a>
+                <h3>Allocate Leave</h3>
+                <img src="images/allocate-leave.png" width="100%">
+                <p>This section will contain below things:</p>
+                <ul>
+                    <li>Here you can allocate paid leave to the employee</li>
+                    <li>You can edit the leave </li>
+                    <li>You can delete the leave</li>
+                </ul>
+            </div>
+
+            <div class="small-box">
+                <a name="holiday"></a>
+                <h3>Holiday</h3>
+                <img src="images/holiday.png" width="100%">
+                <p>This section will contain below things:</p>
+                <ul>
+                    <li>List of holiday</li>
+                    <li>Create holiday</li>
+                    <li>Edit holiday</li>
+                    <li>Delete holiday</li>
+                </ul>
+            </div>
+
+            <div class="small-box">
+                <a name="generate-payroll"></a>
+                <h3>Generate Payroll</h3>
+                <img src="images/payroll.png" width="100%">
+                <p>This section will contain below things:</p>
+                <ul>
+                    <li>List of employee payroll</li>
+                    <li>Create payroll</li>
+                    <li>Edit payroll</li>
+                    <li>Delete payroll</li>
+                </ul>
+            </div>
+
+            <div class="small-box">
+                <a name="configuration"></a>
+                <h3>Configuration</h3>
+                <img src="images/conf-1.png" width="100%">
+                <img src="images/conf-2.png" width="100%">
+                <img src="images/conf-3.png" width="100%">
+                <p>This section will contain below things:</p>
+                <ul>
+                    <li>In the first card you can change application name,language,currency,timestamp</li>
+                    <li>In the second card you can change application logo,favicon icon,fixed sidebar,fixed header</li>
+                    <li>In the third card you can set company details, which will reflect when employee download salary slip</li>
+                    <li>fourth card is related to the footer, to change footer value</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="big-box">
+            <h2>Employee Login</h2>
+            <div class="small-box">
+                <a name="employee-dashboard"></a>
+                <h3>Dashboard</h3>  
+                <img src="images/emp-dash-1.png" width="100%">
+                <img src="images/emp-dash-2.png" width="100%">
+                <img src="images/emp-dash-3.png" width="100%">
+                <p>First section will contain below things:</p>
+                <ul>
+                    <li>Attendance monthly wise count</li>
+                    <li>Working hour monthly wise count</li>
+                    <li>Assigned project Lifetime</li>
+                    <li>Completed project Lifetime</li>
+                    <li>Approved leave Lifetime</li>
+                    <li>Approved finish task Lifetime</li>
+                    <li>Task count lifetime</li>
+                </ul>
+                <p>Second section will contain below things:</p>
+                <ul>
+                    <li>Show top 5 performer based on working hour(Monthly Wise)</li>
+                </ul>
+                <p>Third section will contain below things: </p>
+                <ul>
+                    <li>Show month wise attedance with the working hour</li>
+                </ul>
+            </div>
+            <div class="small-box">
+                <a name="employee-attendance"></a>
+                <h3>Attendance</h3>
+                <img src="images/emp-attend-1.png" width="100%">
+                <img src="images/emp-attend-2.png" width="100%">
+                <p>This section will contain below things</p>
+                <ul>
+                    <li>Show lifetime login and logout hours for the employee</li>
+                </ul>
+            </div>
+
+            <div class="small-box">
+                <a name="employee-profile"></a>
+                <h3>Profile</h3>
+                <img src="images/emp-profile-1.png"  width="100%">
+                <img src="images/emp-profile-2.png" width="100%">
+                <img src="images/emp-profile-3.png" width="100%">
+                <p>This section will contain below things</p>
+                <ul>
+                    <li>Employee can update their personal details</li>
+                    <li>Employee can add/update their relative details</li>
+                    <li>Employee can check their previous employeement history, if any added by the admin</li>
+                </ul>
+            </div>
+
+            <div class="small-box">
+                <a name="employee-project"></a>
+                <h3>Projects</h3>
+                <img src="images/emp-project.png" width="100%">
+                <p>This section will contain below things:</p>
+                <ul>
+                    <li>List of project</li>
+                    <li>Create project</li>
+                    <li>Edit project</li>
+                    <li>Delete project</li>
+                    <li>Show completed project</li>
+                </ul>
+                <p><b>Note:</b> Project list will be shown here role priority wise means employee with lower level assigned role can't able to see project created by upper level</p>
+            </div>
+
+            <div class="small-box">
+                <a name="employee-task"></a>
+                <h3>Task</h3>
+                <img src="images/emp-task-1.png" width="100%">
+                <p>This section will contain below things:</p>
+                <ul>
+                    <li>List of task</li>
+                    <li>Create task</li>
+                    <li>Edit task</li>
+                    <li>Delete task</li>
+                    <li>Show completed task</li>
+                    <li>There is a microservice running on every 2 sec, so you can check who is working and who is not working on your assigned task</li>
+                </ul>
+                <img src="images/emp-task-2.png" width="100%">
+                <p>When you click on task, from the task list you are able to comments which is made by the assigned employee</p>
+                <p><b>Note:</b> Task list will be shown here role priority wise means employee with lower level assigned role can't able to see task created by upper level</p>
+            </div>
+
+            <div class="small-box">
+                <a name="employee-mytask"></a>
+                <h3>My Task</h3>
+                <img src="images/emp-my-task-1.png" width="100%">
+                <p>This section will contain below things:</p>
+                <ul>
+                    <li>You can see your assigned task here</li>
+                    <li>You can check your completed task by clicking on completed task</li>
+                    <li>You can add the comment by clicking on task name</li>
+                </ul>
+                 <img src="images/emp-my-task-2.png" width="100%">
+                 <img src="images/emp-my-task-3.png" width="100%">
+                <p>This section will come when click on your task name from the task list</p>
+                <ul>
+                    <li>Here you can add the comment for particular task</li>
+                </ul>
+            </div>
+
+            <div class="small-box">
+                <a name="employee-vacation"></a>
+                <h3>My Vacation</h3>
+                <img src="images/emp-vacation.png" width="100%">
+                <p>This section will contain below things</p>
+                <ul>
+                    <li>List of vacation</li>
+                    <li>Create vacation</li>
+                    <li>Edit vacation</li>
+                    <li>Delete vacation</li>
+                </ul>
+            </div>
+            <div class="small-box">
+                <a name="employee-holiday-calendar"></a>
+                <h3>Holiday Calendar</h3>
+                <img src="images/emp-calendar-1.png" width="100%">
+                <img src="images/emp-calendar-2.png" width="100%">
+                <p>This section will contain below things</p>
+                <ul>
+                    <li>It will show holiday in the Calendar, which is added by the admin</li>
+                </ul>
+            </div>
+            <div class="small-box">
+                <a name="employee-salary-slip"></a>
+                <h3>Salary Slip</h3>
+                <img src="images/emp-salary-slip-1.png" width="100%">
+                <p>This section will contain below things</p>
+                <ul>
+                    <li>It will contain your month wise salary slip, when you click on eye icon, after that below image will be shown in your browser</li>
+                </ul>
+                <img src="images/emp-salary-slip-2.png" width="100%">
+                <img src="images/emp-salary-slip-3.png" width="100%">
+                <img src="images/emp-salary-slip-4.png" width="100%">
+                <p>This digital salary slip will be shown when you click on the eye icon,from salary slip list</p>
+            </div>
+            <div class="small-box">
+                <a name="codehunger-support"></a>
+                <h3>Contact Us</h3>
+                <p>If you have any Queries/Feedbacks feel free to contact us <b>@skype: codehunger</b> <br>
+                    For Support, you can also mail us on support@codeHunger.in  Thank you</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

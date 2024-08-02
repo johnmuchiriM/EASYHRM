@@ -1,0 +1,2 @@
+1. Date time picker not worked in case of clone
+2. Data time picker not working during edit project
